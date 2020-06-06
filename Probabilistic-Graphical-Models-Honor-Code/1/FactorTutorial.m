@@ -37,9 +37,10 @@
 %
 %
 % We have provided the AssignmentToIndex and IndexToAssignment functions
-% that compute the mapping between the assignments A and the variable indices I,
-% given D, the cardinality of the variables. Concretely, given a factor phi, if
-% phi.val(I) corresponds to the assignment A, i.e. phi(X = A) = phi.val(I) then
+% that compute the mapping between the assignments A and the variable
+% indices I, given D, the cardinality of the variables. Concretely, given
+% a factor phi, if phi.val(I) corresponds to the assignment A, i.e.
+% phi(X = A) = phi.val(I) then
 % 
 %   I = AssignmentToIndex(A, D)
 %   A = IndexToAssignment(I, D)
@@ -56,17 +57,17 @@
 % sample factor phi, phi.card, which is [2 2 2].
 %
 % More generally, the assignment vector A is a row vector that corresponds
-% to assignments to the variables in a factor, with an understanding that the
-% variables for which the assignments refer to are given by the .var field
-% of the factor. 
+% to assignments to the variables in a factor, with an understanding that
+% the variables for which the assignments refer to are given by the .var
+% field of the factor. 
 %
-% Giving AssignmentToIndex a matrix A, one assignment per row, will cause it
-% to return a vector of indices I, such that I(k) is the index
+% Giving AssignmentToIndex a matrix A, one assignment per row, will cause
+% it to return a vector of indices I, such that I(k) is the index
 % corresponding to the assignment in A(k, :) (row k). 
 % 
 % Similarly, giving IndexToAssignment a vector I of indices will yield a
-% matrix A of assignments, one per row, such that A(k, :) (the kth row of A)
-% corresponds to the assignment mapped to by index I(k).
+% matrix A of assignments, one per row, such that A(k, :) (the kth row of
+% A) corresponds to the assignment mapped to by index I(k).
 %
 % Getting and setting values to factors
 % -------------------------------------

@@ -29,7 +29,8 @@ while ischar(tline)
       if ~isempty(strfind(tline, 'states'))
         startIdx = strfind(tline, '(') + 1;
         endIdx = strfind(tline, ')');
-        assert(~isempty(endIdx), 'Error: state string spans multiple lines');
+        assert(~isempty(endIdx),...
+            'Error: state string spans multiple lines');
         endIdx = endIdx - 1;
         stateNames = tline(startIdx:endIdx);
         
@@ -105,7 +106,8 @@ while ischar(tline)
     % define the factor. note that because the values in the HUGIN format
     % are in row-major order, we have to reverse the order of the variables 
     % (and cardinalities!) so that the values are in the correct order
-    F(end + 1) = struct('var', fliplr(varIds), 'card', fliplr(cards), 'val', vals(:)');
+    F(end + 1) = struct('var', fliplr(varIds), 'card', fliplr(cards),...
+        'val', vals(:)');
     
     % chomp up remaining lines till we reach the closing brace
     tline = fgetl(fid);

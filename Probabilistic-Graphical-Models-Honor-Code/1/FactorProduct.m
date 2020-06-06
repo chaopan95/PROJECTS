@@ -1,6 +1,7 @@
 % FactorProduct Computes the product of two factors.
-%   C = FactorProduct(A,B) computes the product between two factors, A and B,
-%   where each factor is defined over a set of variables with given dimension.
+%   C = FactorProduct(A,B) computes the product between two factors, A and
+%   B, where each factor is defined over a set of variables with given
+%   dimension.
 %   The factor data structure has the following fields:
 %       .var    Vector of variables in the factor, e.g. [1 2 3]
 %       .card   Vector of cardinalities corresponding to .var, e.g. [2 2 2]
@@ -19,7 +20,8 @@ if (isempty(B.var)), C = A; return; end;
 [dummy iA iB] = intersect(A.var, B.var);
 if ~isempty(dummy)
 	% A and B have at least 1 variable in common
-	assert(all(A.card(iA) == B.card(iB)), 'Dimensionality mismatch in factors');
+	assert(all(A.card(iA) == B.card(iB)),...
+        'Dimensionality mismatch in factors');
 end
 
 % Set the variables of C

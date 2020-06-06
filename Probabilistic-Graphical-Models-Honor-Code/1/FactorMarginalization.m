@@ -5,8 +5,8 @@
 %       .card   Vector of cardinalities corresponding to .var, e.g. [2 2 2]
 %       .val    Value table of size prod(.card)
 %
-%   The resultant factor should have at least one variable remaining or this
-%   function will throw an error.
+%   The resultant factor should have at least one variable remaining or
+%   this function will throw an error.
 % 
 %   See also FactorProduct.m, IndexToAssignment.m, and AssignmentToIndex.m
 
@@ -15,8 +15,8 @@ function B = FactorMarginalization(A, V)
 % Check for empty factor or variable list
 if (isempty(A.var) || isempty(V)), B = A; return; end;
 
-% Construct the output factor over A.var \ V (the variables in A.var that are not in V)
-% and mapping between variables in A and B
+% Construct the output factor over A.var \ V (the variables in A.var that
+% are not in V) and mapping between variables in A and B
 [B.var, mapB] = setdiff(A.var, V);
 
 % Check for empty resultant factor

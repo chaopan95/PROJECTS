@@ -5,8 +5,9 @@
 %     .var    Vector of variables in the factor, e.g. [1 2 3]
 %     .card   Vector of cardinalities corresponding to .var, e.g. [2 2 2]
 %     .val    Value table of size prod(.card)
-%   E is an N-by-2 matrix, where each row consists of a variable/value pair. 
-%     Variables are in the first column and values are in the second column.
+%   E is an N-by-2 matrix, where each row consists of a variable/value
+%   pair. Variables are in the first column and values are in the second
+%   column.
 
 function F = ObserveEvidence(F, E)
 
@@ -45,7 +46,8 @@ for i = 1:size(E, 1),
             assignments = IndexToAssignment(1:prod(F(j).card), F(j).card);
             for k = 1: prod(F(j).card)
                 if assignments(k, indx) ~= x
-                    F(j) = SetValueOfAssignment(F(j), assignments(k, :), 0);
+                    F(j) = SetValueOfAssignment(F(j),...
+                        assignments(k, :), 0);
                 end
             end
             

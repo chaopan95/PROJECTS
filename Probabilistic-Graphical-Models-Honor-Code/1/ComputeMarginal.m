@@ -26,8 +26,8 @@ end
 % M should be a factor
 % Remember to renormalize the entries of M!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-M = struct('var', [], 'card', [], 'val', []); % Returns empty factor. Change this.
+% Empty factor
+M = struct('var', [], 'card', [], 'val', []);
 
 Joint = ComputeJointDistribution(F);
 Joint = ObserveEvidence(Joint, E);
