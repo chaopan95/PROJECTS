@@ -1,4 +1,5 @@
-function geneCopyFactor = childCopyGivenFreqsFactor(alleleFreqs, geneCopyVar)
+function geneCopyFactor = childCopyGivenFreqsFactor(alleleFreqs,...
+    geneCopyVar)
 % This function creates a factor whose values are the frequencies of each 
 % allele in the population.
 %
