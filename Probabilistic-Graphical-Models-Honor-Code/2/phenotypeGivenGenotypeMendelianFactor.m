@@ -1,5 +1,5 @@
-function phenotypeFactor = phenotypeGivenGenotypeMendelianFactor(isDominant,...
-    genotypeVar, phenotypeVar)
+function phenotypeFactor = phenotypeGivenGenotypeMendelianFactor(...
+    isDominant, genotypeVar, phenotypeVar)
 % This function computes the probability of each phenotype given the
 % different genotypes for a trait.  It assumes that there is 1 dominant
 % allele and 1 recessive allele.
