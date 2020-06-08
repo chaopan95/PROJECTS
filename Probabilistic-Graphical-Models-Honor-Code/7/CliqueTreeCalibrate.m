@@ -82,7 +82,7 @@ function [P, logZ] = CliqueTreeCalibrate(P, isMax)
                     currentUnnormalizedMessage =...
                         FactorProduct(currentUnnormalizedMessage,...
                         unnormalizedMessages(i, cliqueOne));
-                end            
+                end
             else
                 % Compute the sum because doing max-sum message passing
                 % (summing the logs)
@@ -109,7 +109,7 @@ function [P, logZ] = CliqueTreeCalibrate(P, isMax)
             messages(cliqueOne,cliqueTwo) =...
                 FactorMaxMarginalization(currentMessage, varsToRemove);
         end
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     end
 
 
@@ -118,8 +118,7 @@ function [P, logZ] = CliqueTreeCalibrate(P, isMax)
     % logZ, the log of the partition function.
     if (doLogZ)
         %%% YOUR CODE HERE:
-        logZ = 0; % remove this
-        
+
         message = struct('var', [], 'card', [], 'val', []);
         for i = 1:N
             for j = 1:N
@@ -130,7 +129,6 @@ function [P, logZ] = CliqueTreeCalibrate(P, isMax)
             end;
         end;
         logZ = log(sum(message.val));
-        
         
     else
         logZ = 0;
